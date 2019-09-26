@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ClientMasterPage.master.cs" Inherits="Contant_MasterPage_ClientMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+
+    <title></title>
+
+    <link href="../bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../ClientPanel/ClientPanelContant/fontawesome-free-5.10.1-web/css/all.css" rel="stylesheet" />
+    <link href="../../ClientPanel/ClientPanelContant/Rapid/lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="../../ClientPanel/ClientPanelContant/Rapid/lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet" />
+
+    <!-- Bootstrap CSS File -->
+    <link href="../../ClientPanel/ClientPanelContant/Rapid/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Libraries CSS Files -->
+    <link href="../../ClientPanel/ClientPanelContant/Rapid/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../ClientPanel/ClientPanelContant/Rapid/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="../../ClientPanel/ClientPanelContant/Rapid/lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="../../ClientPanel/ClientPanelContant/Rapid/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="../../ClientPanel/ClientPanelContant/Rapid//lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Main Stylesheet File -->
+    <link href="../../ClientPanel/ClientPanelContant/Rapid/css/style.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        .f {
+            position: fixed;
+            left: 0;
+            bottom: 1px;
+            width: 100%;
+            background-color: #212529;
+            color: white;
+            text-align: center;
+        }
+
+        /*body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }*/
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            font-size: 26px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            /*padding: 15px;*/
+            border-radius: 4px;
+        }
+
+            #myBtn:hover {
+                background-color: #555;
+            }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <%--Top Button--%>
+            <button onclick="topFunction()" id="myBtn" title="Go to top">
+                <i class="fas fa-caret-up"></i>
+            </button>
+            <%--Header--%>
+            <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+                <asp:HyperLink ID="hlHF" runat="server" CssClass="navbar-brand" NavigateUrl="~/HospitalFinder/Search">HospitalFinder</asp:HyperLink>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlHome" runat="server" CssClass="nav-link" NavigateUrl="~/HospitalFinder/Search">Home</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlStateWiseHospital" runat="server" CssClass="nav-link" NavigateUrl="~/HospitalFinder/StateWiseHospital">StateWiseHospital</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlCityWiseHospital" runat="server" CssClass="nav-link" NavigateUrl="~/HospitalFinder/CityWiseHospital">CityWiseHospital</asp:HyperLink></li>
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <asp:Label ID="lblMsg" runat="server" CssClass="nav-link"></asp:Label>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <br />
+        <br />
+        <br />
+        <asp:ContentPlaceHolder ID="cphContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <%--Footer--%>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div>
+            <footer class="f">
+                <%--<p class="font-weight-bold text-center">Developed By - Yash Bhatasana(170540107014)</p>--%>
+                <p class="font-weight-bold text-center">Darshan Institute Of Engineering And Technology</p>
+            </footer>
+        </div>
+    </form>
+
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/jquery/jquery.min.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/easing/easing.min.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/mobile-nav/mobile-nav.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/wow/wow.min.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/waypoints/waypoints.min.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/counterup/counterup.min.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/lib/lightbox/js/lightbox.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="../../ClientPanel/ClientPanelContant/Rapid/js/main.js"></script>
+
+    <script src="../../ClientPanel/ClientPanelContant/fontawesome-free-5.10.1-web/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

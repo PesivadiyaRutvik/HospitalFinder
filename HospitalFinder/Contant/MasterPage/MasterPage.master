@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Contant_MasterPage_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .f {
+            position: fixed;
+            left: 0;
+            bottom: 1px;
+            width: 100%;
+            background-color: #212529;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <%--Header--%>
+            <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <asp:HyperLink ID="hlHF" runat="server" CssClass="navbar-brand" NavigateUrl="~/AdminPanel/Default.aspx">HospitalFinder</asp:HyperLink>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlHome" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPanel/Default.aspx">Home</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlHospital" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPanel/Hospital/HospitalList.aspx">Hospital</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlState" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPanel/State/StateList.aspx">State</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlCity" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPanel/City/CityList.aspx">City</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlCategory" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPanel/Category/CategoryList.aspx">CategoryName</asp:HyperLink></li>
+                        <li class="nav-item">
+                            <asp:HyperLink ID="hlCategoryType" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPanel/CategoryType/CategoryTypeList.aspx">CategoryType</asp:HyperLink></li>
+                       <%-- <li class="nav-item">
+                            <asp:HyperLink ID="hlAbout" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPanel/About/About.aspx">About</asp:HyperLink></li>--%>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <asp:Label ID="lblMsg" runat="server" CssClass="nav-link"></asp:Label></li>
+                        <%--<li class="nav-item">--%>
+                        <%--<asp:LinkButton ID="lbLogout" runat="server" CssClass="nav-link" OnClick="lbLogout_Click">LogOut</asp:LinkButton></li>--%>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <asp:ContentPlaceHolder ID="cphContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <%--Footer--%>
+        <br />
+        <br />
+        <br />
+        <br />
+        <div>
+            <footer class="f">
+                <p class="font-weight-bold text-center">Developed By - Yash Bhatasana(170540107014)</p>
+                <p class="font-weight-bold text-center">yashbhatasana1852@gmail.com | Darshan Institute Of Engineering And Technology</p>
+            </footer>
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
